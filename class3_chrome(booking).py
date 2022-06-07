@@ -4,8 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # Login Details:
-USERNAME = ""
-PASSWORD = ""
+USERNAME = "109B05082003"
+PASSWORD = "760359"
 
 # Format = ["dd/mm/yyyy","dd/mm/yyyy", (...)]
 DESIRED_DATES = ["12/10/2022"]
@@ -19,7 +19,7 @@ INTERVAL = 10
 
 # Chrome Driver location.
 # Insert location of Chrome Driver.
-LOCATION = ""
+LOCATION = "/Users/yeowenrong/bbdc2/chromedriver"
 
 # No need to change.
 WAIT = 5
@@ -162,7 +162,6 @@ def book(driver, slots):
             driver.find_element(By.CLASS_NAME, "errtblmsg").text
             == "Booking Confirmed !"
         ):
-
             print("Slots Booked.")
             playsound("alert.wav")
             return
@@ -189,10 +188,10 @@ def main():
         time.sleep(WAIT)
 
         print(f"\n\nRefresh Count: {count}")
-
         slots = check_dates(driver)
         book(driver, slots)
         time.sleep(INTERVAL)
+
         count += 1
 
 
